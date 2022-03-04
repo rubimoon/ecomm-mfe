@@ -1,16 +1,16 @@
 import React, { lazy, Suspense, useState } from 'react';
-import Header from './components/Header';
+import Header from './Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {
   StylesProvider,
   createGenerateClassName,
 } from '@material-ui/core/styles';
-import Progress from './components/Progress';
+import Progress from './Progress';
 
 // React Component which only be loaded when requested
-const MarketingApp = lazy(() => import('./components/MarketingApp'));
-const AuthApp = lazy(() => import('./components/AuthApp'));
-const DashboardApp = lazy(() => import('./components/DashboardApp'));
+const MarketingApp = lazy(() => import('../app/MarketingApp'));
+const AuthApp = lazy(() => import('../app/AuthApp'));
+const DashboardApp = lazy(() => import('../app/DashboardApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
