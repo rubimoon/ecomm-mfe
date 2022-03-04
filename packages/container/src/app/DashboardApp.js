@@ -1,7 +1,7 @@
 import { mount } from 'dashboard/DashboardApp';
 import React, { useRef, useEffect } from 'react';
 
-const DashboardApp = ({ onSignIn }) => {
+const DashboardApp = () => {
   // generic logic
   const ref = useRef(null);
 
