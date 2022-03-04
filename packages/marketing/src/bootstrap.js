@@ -5,8 +5,12 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 
 // function invoked in container to start up the app
 // default history is only gonna be provided in dev env
-const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  const history =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath],
+    });
   // whenever the path(url) changes
   if (onNavigate) {
     history.listen(onNavigate);
