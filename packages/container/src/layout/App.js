@@ -7,11 +7,11 @@ import {
   createGenerateClassName,
 } from '@material-ui/core/styles';
 import Progress from './Progress';
+import DashboardApp from '../app/DashboardApp';
 
 // React Component which only be loaded when requested
 const MarketingApp = lazy(() => import('../app/MarketingApp'));
 const AuthApp = lazy(() => import('../app/AuthApp'));
-const DashboardApp = lazy(() => import('../app/DashboardApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
