@@ -5,6 +5,7 @@ import {
   StylesProvider,
   createGenerateClassName,
 } from '@material-ui/core/styles';
+import Progress from './components/Progress';
 
 // React Component which only be loaded when requested
 const MarketingApp = lazy(() => import('./components/MarketingApp'));
@@ -20,7 +21,7 @@ const App = () => {
       <StylesProvider generateClassName={generateClassName}>
         <div>
           <Header />
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Progress />}>
             <Switch>
               <Route path='/auth' component={AuthApp} />
               <Route path='/' component={MarketingApp} />
