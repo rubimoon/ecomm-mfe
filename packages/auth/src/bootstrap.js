@@ -5,7 +5,7 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 
 // function invoked in container to start up the app
 // default history is only gonna be provided in dev env
-const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (el, { onNavigate, defaultHistory, initialPath, onSignIn }) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
@@ -15,7 +15,9 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   if (onNavigate) {
     history.listen(onNavigate);
   }
-  ReactDOM.render(<App history={history} />, el);
+
+  ReactDOM.render(<App history={history} onSignIn={onSignIn} />, el);
+
   return {
     onParentNavigate: ({ pathname: nextPathname }) => {
       const { pathname } = history.location;
