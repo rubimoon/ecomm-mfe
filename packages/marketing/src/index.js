@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { createMemoryHistory } from 'history';
 
-const mount = (el) => {
-  ReactDOM.render(<App />, el);
+// function invoked in container to start up the app
+const mount = (el, { onNavigate }) => {
+  const history = createMemoryHistory();
+  // whenever the path(url) changes
+  history.listen(onNavigate);
+  ReactDOM.render(<App history={history} />, el);
 };
 
 if (process.env.NODE_ENV === 'development') {
