@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect, useReducer } from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import Header from './Header';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
